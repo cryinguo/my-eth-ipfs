@@ -1,9 +1,8 @@
 const config = {
     express: {
         // when deployed , change url host
-        host: "localhost", 
-        port: '3001', 
-        url: `http://{host}:port`      
+        url: `http://127.0.0.1:`, 
+        port: '3001',       
     },
 
     db: {
