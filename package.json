@@ -1,0 +1,31 @@
+{
+  "name": "my-eth-ipfs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "ipfs-api": "^24.0.2",
+    "mongolass": "^4.4.0",
+    "nodemon": "^1.18.4",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^15.4.2",
+    "react-scripts": "^2.0.4",
+    "web3": "^1.0.0-beta.36"
+  },
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" \"nodemon ./src/service/server.js\" ",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "homepage": ".",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
