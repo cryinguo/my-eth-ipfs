@@ -25,3 +25,7 @@
 ### 可能遇到的问题：
 1. 添加文件没有获取到 hash ,报错说 CORS 访问403: 因为访问ipfs本地的5001端口被拒绝，需要设置跨域访问，参考https://github.com/INFURA/tutorials/wiki/IPFS-and-CORS
 2. ubuntu 可能会遇到启动失败的问题：Error：watch ENOSPC 报错，原因是达到了 ubuntu 默认的最大监听事件，解决方案参考：https://blog.csdn.net/qq_21460229/article/details/78290740
+
+1. ipfs 私有链搭建与测试 ()
+2. 数据库 存放所有用户的 ipfs hash - 文件名 对
+2. user file 展示的是 用户自己上传的文件, 文件可以点击展示详细信息， topics 里面可以检索所有用户的文件并且下载 local ipfs get 
