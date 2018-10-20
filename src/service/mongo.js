@@ -47,21 +47,22 @@ class Mongo {
         }  
     }
 
-    downloadFile (cid, fileName) {
-        //console.log("download file ",cid,fileName)
-        ipfs.get(cid, function (err, files) {
-            if (err) console.log("ipfsGetErr", err);
-            files.forEach((file) => {
-                console.log("(mongodb) downloading file :",file.path)
-                //console.log(file.content.toString('utf8'))
-                fs.writeFile("./download/" + fileName, file.content, err => {
-                    if(err) console.log("fs.write Err:",err);
-                    //console.log("downloading finished")
-                    self.download$.next("downloading finished")
-                })
-            })
-        })
-    }
+    // （删除）后端下载功能舍弃
+    // downloadFile (cid, fileName) {
+    //     //console.log("download file ",cid,fileName)
+    //     ipfs.get(cid, function (err, files) {
+    //         if (err) console.log("ipfsGetErr", err);
+    //         files.forEach((file) => {
+    //             console.log("(mongodb) downloading file :",file.path)
+    //             //console.log(file.content.toString('utf8'))
+    //             fs.writeFile("./download/" + fileName, file.content, err => {
+    //                 if(err) console.log("fs.write Err:",err);
+    //                 //console.log("downloading finished")
+    //                 self.download$.next("downloading finished")
+    //             })
+    //         })
+    //     })
+    // }
 }
 
 module.exports = Mongo;

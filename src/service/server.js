@@ -28,18 +28,19 @@ app.get('/search',   async (req, res) => {
     res.send(searchresult);
 });
 
-app.get('/topic', async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "*");
+// 后端下载舍弃
+// app.get('/topic', async (req, res) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "*");
 
-    let cid = req.query.cid;
-    let filename = req.query.filename;
+//     let cid = req.query.cid;
+//     let filename = req.query.filename;
 
-    await mongo.downloadFile(cid, filename);
-    mongo.download$.subscribe(status => {
-        console.log("(mongodb) downloading status: ", status);
-        res.send(status);
-    })
-});
+//     await mongo.downloadFile(cid, filename);
+//     mongo.download$.subscribe(status => {
+//         console.log("(mongodb) downloading status: ", status);
+//         res.send(status);
+//     })
+// });
 
 app.listen(config.express.port);

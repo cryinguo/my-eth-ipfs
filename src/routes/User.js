@@ -12,7 +12,7 @@ class User extends Component {
             filestate: {}
   
         }
-        this.MsgBox = this.MsgBox.bind(this)
+        this.showMore = this.showMore.bind(this)
     }
     
     getFileList = async() => {
@@ -30,7 +30,7 @@ class User extends Component {
         })
     }
 
-    MsgBox(file) {
+    showMore(file) {
         ipfs.files.stat('/test1/'+file, (err, stats) => {
             console.log(stats)
             this.setState({filestate:stats})
@@ -51,7 +51,7 @@ class User extends Component {
                     <div style={{width:"50%", float:"left"}}>
                         {this.state.files.map(file => 
                             <li key={file.name}>
-                                <button onClick={this.MsgBox.bind(this, file.name) }></button>
+                                <button onClick={this.showMore.bind(this, file.name) }></button>
                                 {file.name}
                                 <hr/>
                             </li> )}
@@ -59,9 +59,9 @@ class User extends Component {
                 </ul>
 
                 <div style={{width:"45%", float:"right"}}>
-                    <h2>type:{this.state.filestate.type}</h2>
-                    <h2>filesize:{this.state.filestate.size} byte</h2>
-                    <h2>filehash:{this.state.filestate.hash}</h2>
+                    <h2>{this.state.filestate.type} </h2>
+                    <h2>{this.state.filestate.size} </h2>
+                    <h3>{this.state.filestate.hash}</h3>
 
                 </div>
 
